@@ -1,6 +1,6 @@
 from Birds import Bird
 from Pipes import Pipes
-from Borders import Borders
+import Borders
 import config as cfg
 import time
 
@@ -82,6 +82,7 @@ while running:
         running = False
 
     # UPDATE SCREEN
+    Borders.draw()
     pygame.display.update()
 
     if not running:

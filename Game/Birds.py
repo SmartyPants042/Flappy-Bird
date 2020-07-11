@@ -27,6 +27,7 @@ class Bird():
     def jump(self):
         self.t = 1
         self.v = cfg.BIRD_UPWARD_VELOCITY
+        self.y += cfg.BIRD_JUMP_HEIGHT
 
     def move(self):
         """
@@ -44,10 +45,15 @@ class Bird():
         # displacement
         self.y = self.y + self.v * self.t + 0.5 * self.g * self.t**2
 
-        # Top Stop
+        # # Top Stop
+        # if self.y <= cfg.BIRD_SIZE + cfg.SKY_HEIGHT:
+        #     self.y = cfg.BIRD_SIZE + cfg.SKY_HEIGHT
+
+        # Top also death
         if self.y <= cfg.BIRD_SIZE + cfg.SKY_HEIGHT:
             self.y = cfg.BIRD_SIZE + cfg.SKY_HEIGHT
-
+            return False
+            
         # Bottom DEATH
         if self.y >= (cfg.SCREEN_HEIGHT - cfg.GROUND_HEIGHT - cfg.BIRD_SIZE):
             self.y = cfg.SCREEN_HEIGHT - cfg.GROUND_HEIGHT - cfg.BIRD_SIZE
