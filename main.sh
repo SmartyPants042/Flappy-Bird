@@ -1,16 +1,30 @@
 #!/bin/zsh
 
-# installing the requirements
-pip install -r requirements.txt
-
 # resetting the screen
-# clear
+clear
 
-echo "\n\n\nWelcome the the Falpi Birb Game!"
-echo "Main Menu: "
-echo "\t1. Play Yourself"
-echo "\t2. See NEAT in action"
-echo "\t0. Exit"
+echo "                          .   .       "
+echo "                          | \/|       "
+echo "  (\   _                  ) )|/|      "
+echo "      (/            _----. /.'.'      "
+echo ".-._________..      .' @ _\  .'              Welcome to..."
+echo "'.._______.   '.   /    (_| .')       the one and only,"
+echo "  '._____.  /   '-/      | _.'                the legendary,"
+echo "   '.______ (         ) ) \           "
+echo "     '..____ '._       )  )           "
+echo "        .' __.--\  , ,  // ((         "
+echo "        '.'     |  \/   (_.'(         Flapi Birb Game!"
+echo "                '   \ .'              "
+echo "                 \   (                "
+echo "                  \   '.              "
+echo "  Author: Tanishq  \ \ '.)            "
+echo "     Chaudhary      '-'-'             "
+
+
+echo "\n\nMain Menu: "
+echo "\t001. Play Yourself"
+echo "\t002. See NEAT in action"
+echo "\tany. Exit"
 
 while [ true ]
 do

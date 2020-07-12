@@ -8,6 +8,7 @@ GREEN = (0, 255, 0)
 RED = (255, 0, 0)
 YELLOW = (255, 255, 0)
 BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
 
 # SCREEN
 FPS = 30
@@ -16,6 +17,8 @@ SCREEN_HEIGHT = 720
 SCREEN_WIDTH = 450
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('Flapi Birb')
+pygame.font.init()
+font = pygame.font.Font('freesansbold.ttf', 32) 
 
 # BIRD PHYSICS
 GRAVITY = 0.00005

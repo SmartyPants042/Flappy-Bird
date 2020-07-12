@@ -8,9 +8,11 @@ from Utility import collision_detection
 import pygame
 pygame.init()
 
+# Score to be displayed
+score = 0
+
 # yey, birb!
 bird = Bird()
-
 # pipes
 pipes = []
 pipe = Pipes()
@@ -19,6 +21,9 @@ pipes.append(pipe)
 running = True
 while running:
 
+    # score for each frame you stay alive
+    score += 0.005 
+    
     # Handling exit
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -66,7 +71,11 @@ while running:
 
     # UPDATE SCREEN
     Borders.draw()
+    Borders.scorer(int(score))
+
     pygame.display.update()
 
     if not running:
         time.sleep(cfg.BIRD_DEATH_TIME)
+
+print(f"Game Over ...\nYou scored: {int(score)} points!")

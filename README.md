@@ -1,9 +1,14 @@
 # Flapi Birb
 **Implementing the Legendary game, Flappy Bird using the NEAT(Neuroevolution of augmenting topologies) algorithm.**
 
+## Requirements:
+
+Execute the following command for the dependencies
+`pip install -r requirements.txt`
+This installs: `neat-python` and `pygame` using `pip`
+
 ## The Game:
-- Run the main.sh script:
-    - Note: installs: `neat-python` and `pygame` using `pip`
+- Run the main.sh script
 
 - There are two options to Play the game: 
     - Play the game yourself

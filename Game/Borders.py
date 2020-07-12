@@ -9,3 +9,9 @@ def draw():
     pygame.draw.rect(cfg.SCREEN, cfg.LIGHT_BLUE, 
         (0, 0, cfg.SCREEN_WIDTH, cfg.SKY_HEIGHT)
     )
+
+def scorer(score):
+    text = cfg.font.render(
+        str(score).encode('utf-8').decode('utf-8'), True, cfg.WHITE
+    )
+    cfg.SCREEN.blit(text, (0, 0))
