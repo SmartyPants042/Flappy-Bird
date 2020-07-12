@@ -4,7 +4,9 @@
 ## Requirements:
 
 Execute the following command for the dependencies
+
 `pip install -r requirements.txt`
+
 This installs: `neat-python` and `pygame` using `pip`
 
 ## The Game:
