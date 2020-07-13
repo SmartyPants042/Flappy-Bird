@@ -2,6 +2,7 @@ import pygame
 import config as cfg
 
 def draw():
+    # draws the top and bottom bird death zones.
     pygame.draw.rect(cfg.SCREEN, cfg.DARK_BLUE, 
         (0, cfg.SCREEN_HEIGHT-cfg.GROUND_HEIGHT, cfg.SCREEN_WIDTH, cfg.GROUND_HEIGHT)
     )
@@ -11,6 +12,7 @@ def draw():
     )
 
 def scorer(score):
+    # displays the current score on the screen top-left corner
     text = cfg.font.render(
         str(score).encode('utf-8').decode('utf-8'), True, cfg.WHITE
     )

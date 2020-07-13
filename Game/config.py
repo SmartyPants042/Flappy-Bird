@@ -1,3 +1,11 @@
+"""
+This is the file upon which the specifications of the game are based.
+From the look and colours of the game window, to the actual physics of the 
+game. Reader can change this to experiment with the NEAT Algorithm part.
+
+Look under 'Bird Physics' and 'Pipe Physics'.
+"""
+
 import pygame
 
 # COLO(U)RS
@@ -31,6 +39,11 @@ BIRD_JUMP_HEIGHT = -1.2
 
 # PIPE PHYSICS
 PIPE_VELOCITY = -0.25
+PIPE_WIDTH = 100
+PIPE_RANGE_FROM_BOTTOM = 150
+PIPE_RANGE_FROM_TOP = 200
+PIPE_GAP = 150
+PIPE_SPACER = 200
 
 # DESIGN
 BIRD_X_INIT = 100
@@ -38,8 +51,3 @@ BIRD_SPACER_INIT = 100
 GROUND_HEIGHT = 45
 SKY_HEIGHT = 10
 BIRD_DEATH_TIME = 1
-PIPE_WIDTH = 100
-PIPE_RANGE_FROM_BOTTOM = 150
-PIPE_RANGE_FROM_TOP = 200
-PIPE_GAP = 150
-PIPE_SPACER = 200

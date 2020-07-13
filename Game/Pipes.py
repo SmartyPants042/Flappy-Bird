@@ -4,7 +4,7 @@ import random
 
 class Pipes():
     def __init__(self):
-        # Design
+        # Design & Physics
         self.width = cfg.PIPE_WIDTH
         self.left = cfg.SCREEN_WIDTH
         
@@ -18,6 +18,13 @@ class Pipes():
         self.v = cfg.PIPE_VELOCITY
 
     def move(self):
+        """
+        Checks whether the pipe has gone out of the screen on the
+        left hand side. 
+
+        returns true if the pipe is still on the screen,
+        else returns false.
+        """
         self.left += self.v
         
         # check boudary crossing
@@ -27,6 +34,8 @@ class Pipes():
         return True
 
     def draw(self):
+        # draws the top and the bottom pipes
+        
         pygame.draw.rect(cfg.SCREEN, cfg.GREEN, \
             (self.left, self.top_pipe_top, self.width, self.top_pipe_height))        
 

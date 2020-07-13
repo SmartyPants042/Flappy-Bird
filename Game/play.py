@@ -24,7 +24,7 @@ while running:
     # score for each frame you stay alive
     score += 0.005 
     
-    # Handling exit
+    # Handling exit and jumps
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -32,16 +32,15 @@ while running:
             if event.key == pygame.K_SPACE:
                 bird.jump()
 
+
     # UPDATING OBJECTS        
-    # bird
+    ## bird
     bird_alive =  bird.move()
-    
-    # pipes: destruction
+    ## pipes: destruction
     for pipe in pipes:
         if not pipe.move():
             del pipe
-    
-    # pipes: generation        
+    ## pipes: generation        
     if pipes[-1].left <= cfg.SCREEN_WIDTH - cfg.PIPE_WIDTH - cfg.PIPE_SPACER:
         pipes.append(Pipes())
 
@@ -53,14 +52,12 @@ while running:
             break
     
     # DRAWING OBJECTS
-    # fill screen with background
+    ## fill screen with background
     cfg.SCREEN.fill(cfg.BLUE)
-    
-    # pipes
+    ## pipes
     for pipe in pipes:
         pipe.draw()
-    
-    # bird
+    ## bird
     if bird_alive:
         bird.draw()
     else:
@@ -72,10 +69,15 @@ while running:
     # UPDATE SCREEN
     Borders.draw()
     Borders.scorer(int(score))
-
     pygame.display.update()
 
+    # game over
     if not running:
         time.sleep(cfg.BIRD_DEATH_TIME)
 
-print(f"Game Over ...\nYou scored: {int(score)} points!")
+if(score < 20):
+    print(f"Game Over \nYou scored: {int(score)} points. Sad.")
+elif(score < 50):
+    print(f"Game Over \nYou scored: {int(score)} points!")
+else:
+    print(f"Game Over \nYou scored: {int(score)} points. Yeet!")

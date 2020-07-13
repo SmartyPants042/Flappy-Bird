@@ -7,32 +7,40 @@ class Bird():
     def __init__(self):
         # Design
         self.color = cfg.BIRD_COLOR
-        
-        # Positions
+
+        # PHYSICS
+        # As given in the config file
+        ## Positions
         self.x = cfg.BIRD_X_INIT
         self.y = random.randint( \
             cfg.BIRD_SIZE + cfg.SKY_HEIGHT + cfg.BIRD_SPACER_INIT, \
             cfg.SCREEN_HEIGHT - cfg.GROUND_HEIGHT - cfg.BIRD_SIZE - cfg.BIRD_SPACER_INIT)
-        
-        # Time
+        ## Time
         self.t = 0
-        
-        # Velocities
+        ## Velocities
         self.v = cfg.BIRD_INITIAL_VELOCITY
         self.tv = cfg.BIRD_TERMINAL_VELOCITY
-
-        # Accleration
+        ## Accleration
         self.g = cfg.GRAVITY
 
     def jump(self):
+        """
+        Makes the bird Jump
+        """
+        # reset time for falling
         self.t = 1
+        # point velocity vector upwards
         self.v = cfg.BIRD_UPWARD_VELOCITY
+        # move the bird upwards (technically not required.)
         self.y += cfg.BIRD_JUMP_HEIGHT
 
     def move(self):
         """
-        returns False if bird is to be killed
-        else True
+        - Makes the bird fall due to the action of gravity.
+        - Checks whether the bird is too high or too low.
+
+        Returns False as in 'don't move the bird (its ded :()'
+        else True as in 'keep the bird alive'
         """
         # time
         self.t += 1
@@ -63,4 +71,5 @@ class Bird():
         return True
 
     def draw(self):
+        # self explanatory ;)
         pygame.draw.circle(cfg.SCREEN, self.color, (int(self.x), int(self.y)), cfg.BIRD_SIZE)
